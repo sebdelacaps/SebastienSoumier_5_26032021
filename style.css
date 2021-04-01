@@ -1,0 +1,19 @@
+h1{
+    font-family: 'Courier New', Courier, monospace;
+    font-size: x-large;
+    
+}
+
+main {
+    display : flex;
+    flex-wrap: wrap;
+}
+
+.product_container{
+    
+    width: 300px;
+}
+
+.product_img{
+    width : 100%;
+}
