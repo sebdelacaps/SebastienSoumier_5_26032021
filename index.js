@@ -12,78 +12,62 @@
 //         console.log(json[i].name)
 //     }
 // }
-// )   
+// )
 // .catch(error => console.log(error))
+
+// Main function
 
 
 
 const getProducts = async () => {
  let response = await fetch('http://localhost:3000/api/cameras/');
- if (response.ok){
-     let data = await response.json()
+     let data_response = await response.json();
+     return data_response
+}
 
-     let main_container = document.getElementById("container")
+const AddElement = (balise, parent) => {
+    let element = document.createElement(balise);
+    console.log(element)
+    parent.appendChild(element);
+    return element;
+
+}
+
+document.addEventListener("DOMContentLoaded", async () => {
+    let data = [];
+try {
+    
+    data = await getProducts();
+    let main_container = document.getElementById("container");
 
  for (let i=0; i<data.length; i++){
-    
 
-    let article_link = document.createElement("a");
+    // creation elements 
+    let article_link = AddElement ("a",main_container);
+    let article = AddElement("article",article_link);
+    let article_img = AddElement("img",article);
+    let article_title = AddElement("h2", article);
+    let article_price = AddElement("h3", article);
+    let article_description = AddElement("p", article);
+
+    // Add class, href and textContent
     article_link.className = "product_link";
-
     article_link.href = "product.html?id="+data[i]._id;
-    main_container.appendChild(article_link);
+    article.className = "product_container";
+    article_img.className = "product_img";
+    article_img.src = data[i].imageUrl;
+    article_title.className = "product_title";
+    article_title.textContent = data[i].name;
+    article_price.className = "product_price";
+    article_price.textContent = data[i].price;
+    article_description.className = "product_description";
+    article_description.textContent = data[i].description;
 
-//     let article = document.createElement("article");
-//    article.className = "product_container";
-//    article_link.appendChild(article);
-   
-let article = AddElement("article", [("className", "product_container")],article_link );
-console.log(article)
-
-   let article_img = document.createElement("img");
-   article_img.className = "product_img";
-   article_img.src = data[i].imageUrl;
-   article.appendChild(article_img);
-
-
-   console.log(data[i].imageUrl)
-
-
-   let article_title = document.createElement("h2");
-   article_title.className = "product_title";
-   article_title.textContent = data[i].name;
-   article.appendChild(article_title);
-   
-   
-   let article_price = document.createElement("h3")
-   article_price.className = "product_price";
-   article_price.textContent = data[i].price;
-   article.appendChild(article_price);
-
-let article_description = document.createElement("p")
-   article_description.className = "product_description";
-   article_description.textContent = data[i].description;
-   article.appendChild(article_description);
-
-                 
  }
- }
- else {
-     console.error('Retour du serveur : ', response.status)
- }
+} catch (e) {
+    console.log("Error!")
+    console.log(e)
 }
 
-getProducts()
+})
 
-function AddElement (balise, proprieties, parent){
-    let element = document.createElement(balise)
-    proprieties.forEach(e => {
-        // [(key, value), (key, value)]
-        element[e[0]]=e[1];
-
-    });
-    parent.appendChild(element);
-    console.log(element)
-return element;
-
-}
