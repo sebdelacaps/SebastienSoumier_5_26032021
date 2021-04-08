@@ -4,6 +4,12 @@ h1{
     
 }
 
+.nav-back-color {
+    background-color: #f3e9f1;
+}
+#logo{
+    width: 150px;
+}
 main {
     display : flex;
     flex-wrap: wrap;
@@ -17,3 +23,9 @@ main {
 .product_img{
     width : 100%;
 }
+
+.nav-item ion-icon {
+    vertical-align: bottom;
+    font-size: 20px;
+}
+

@@ -20,7 +20,8 @@
 
 
 const getProducts = async () => {
- let response = await fetch('http://localhost:3000/api/cameras/');
+//  let response = await fetch('http://localhost:3000/api/cameras/');
+ let response = await fetch('https://ab-p5-api.herokuapp.com/api/cameras');
      let data_response = await response.json();
      return data_response
 }
@@ -71,3 +72,13 @@ try {
 
 })
 
+let onLoadCartNumbers = () =>{
+    let productNumbers = localStorage.getItem('cartNumbers');
+    
+    if(productNumbers) {
+        document.querySelector(".nav-link span").textContent = productNumbers;
+    }
+}
+
+
+onLoadCartNumbers()
