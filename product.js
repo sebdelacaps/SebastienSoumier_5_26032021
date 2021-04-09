@@ -23,7 +23,9 @@ const AddElement = (balise, parent) => {
 
 
 document.addEventListener("DOMContentLoaded", async () => {
-    onLoadCartNumbers()
+    onLoadCartNumbers();
+  
+
     let data = [];
   
     
@@ -55,13 +57,13 @@ try {
   
        // Add choices in the menu
       data.lenses.forEach(lense => {
-          console.log(lense)
+          
         let choice = AddElement ("a", document.getElementById("menu"));
         choice.className = "dropdown-item";
         choice.textContent = lense;
       });
     
-      // Add to basket
+      // Add to LocalStorage
 
       let carts = document.getElementById("add-cart");
     
@@ -151,3 +153,4 @@ let totalCost = (data) => {
     }
     
 }
+
