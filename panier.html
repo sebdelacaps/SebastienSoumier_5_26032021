@@ -58,6 +58,62 @@
 </table>
 </main>
 
+<section>
+
+  <!-- <form action="" class="row g-3 form needs-validation" id="myform" method="POST" novalidate> -->
+    <h1>Passez votre commande :</h1>
+    <form action="" class="row g-3 form" id="myform" method="POST" novalidate>
+        <div class="col-md-4 form-group">
+          <label for="firstName" class="form-label">Prénom</label>
+          <input type="text" class="form-control" id="firstName" name="firstName" placeholder="John" required>
+          <small></small>
+          
+        </div>
+        <div class="col-md-4 form-group">
+          <label for="lastName" class="form-label">Nom</label>
+          <input type="text" class="form-control" id="lastName" name="lastName" placeholder="Doe" required>
+          <small></small>
+        </div>
+        
+        <div class="col-md-4 form-group">
+            <label for="email" class="form-label">Adresse E-Mail</label>
+            <input type="text" class="form-control" id="email" name="email" placeholder="john.doe@gmail.com" required>
+            <small></small>
+          </div>
+
+        <div class="col-md-6 form-group">
+          <label for="address" class="form-label">Adresse</label>
+          <input type="text" class="form-control" id="address" name="address" placeholder="8 Rue de la Folie Méricourt" required>
+          <small></small>
+        </div>
+        
+        <div class="col-md-6 form-group">
+          <label for="cp" class="form-label">Code Postal</label>
+          <input type="text" class="form-control" id="cp" name="cp" placeholder="75011" required>
+          <small></small>
+        </div>
+
+        <div class="col-md-6 form-group">
+          <label for="city" class="form-label">Ville</label>
+          <input type="text" class="form-control" id="city" name="city" placeholder="PARIS" required>
+          <small></small>
+        </div>
+
+        <div class="col-12 form-group">
+          <div class="form-check">
+            <input class="form-check-input" type="checkbox" value="" id="conditions" name="conditions" required>
+            <label class="form-check-label" for="conditions">
+              Agree to terms and conditions
+            </label>
+          </div>
+        </div>
+        <div class="col-12 form group">
+          <button class="btn btn-primary" id="btnSubmit" type="submit">Commander</button>
+        </div>
+  
+      </form>
+    
+</section>
 
 <script type="text/javascript" src="main.js"></script>
 <script type="text/javascript" src="panier.js"></script>
