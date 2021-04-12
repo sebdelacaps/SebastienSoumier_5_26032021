@@ -1,9 +1,28 @@
+//LocalStorage Items to an array of product Id (used to push the array in the post method)
+let cartItems_To_Array = () =>{
+
+  let products_array = [];
+  let cartItems = localStorage.getItem("productsInCart");
+  cartItems = JSON.parse(cartItems);
+  
+  for (var cartItem in cartItems) {
+    products_array.push(cartItems[cartItem]._id)
+  }
+ 
+  return products_array
+
+}
+
+
+
 // From LocalStorage to the Basket view
 
 let displayCart = () => {
   let cartItems = localStorage.getItem("productsInCart");
   cartItems = JSON.parse(cartItems);
 
+  
+  
   let productContainer = document.querySelector(".products-container");
 
   if (cartItems && productContainer) {
@@ -152,21 +171,32 @@ if (emailRegExp.test(inputCp.value)) {
 
 
 
+
 myform.addEventListener("submit", async (event) => {
    // event is an object
 
-   
+  
 // form validation - Client side
 
   if (myform.checkValidity() === false) {
     event.preventDefault();
    event.stopPropagation();
-    
+  
   }
   
 
 // if ok, form submission by a POST request
     else{
+    
+let products_array = cartItems_To_Array()
+
+if (products_array.length === 0) {
+  event.preventDefault();
+  event.stopPropagation();
+  alert("Votre panier est vide!")
+}
+else{
+  
   let postdata = await fetch("http://localhost:3000/api/cameras/order", {
    
     method : "POST",
@@ -180,16 +210,20 @@ myform.addEventListener("submit", async (event) => {
       address: document.getElementById("address").value, 
       city: document.getElementById("city").value, 
       email: document.getElementById("email").value},
-      products :[localStorage.getItem("productsInCart")]
-      
+      products : products_array
     }) 
  
 })
 
+
 // response of the server with the orderId
 let postdata_response = await postdata.json();
-window.location.href = "confirmation.html?orderId="+postdata_response.orderId
+
+ window.location.href = "confirmation.html?orderId="+postdata_response.orderId
+
+}
  }
 })
+
 
 displayCart();

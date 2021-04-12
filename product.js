@@ -65,7 +65,7 @@ document.addEventListener("DOMContentLoaded", async () => {
     //listening to the click event and creation of a callback function
     carts.addEventListener("click", () => {
       cartNumbers(data);
-      totalCost(data);
+      // totalCost(data);
       console.log("added");
     });
 

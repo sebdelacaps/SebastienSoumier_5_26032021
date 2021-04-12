@@ -14,3 +14,4 @@ let onLoadCartNumbers = () => {
     document.querySelector(".nav-link span").textContent = productNumbers;
   }
 };
+
