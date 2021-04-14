@@ -29,7 +29,7 @@ document.addEventListener("DOMContentLoaded", async () => {
     data.inCart = 0;
 
     // target the main container element
-    let main_container = document.getElementById("container");
+    let main_container = document.querySelector("main.container");
     console.log(data);
 
     // creation elements
@@ -40,8 +40,8 @@ document.addEventListener("DOMContentLoaded", async () => {
     let article_description = AddElement("p", article);
 
     // Add class, href and textContent
-    article.className = "product_container";
-    article_img.className = "product_img";
+    article.className = "product_container  border text-center bg-light rounded noHover";
+    article_img.className = "product_img rounded";
     article_img.src = data.imageUrl;
     article_title.className = "product_title";
     article_title.textContent = data.name;

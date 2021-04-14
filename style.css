@@ -1,23 +1,31 @@
-h1{
-    font-family: 'Courier New', Courier, monospace;
-    font-size: x-large;
-    
+a:hover {
+    color: #000;
+   
 }
+
+a {
+    color: #000;
+}
+
 
 .nav-back-color {
     background-color: #f3e9f1;
 }
+
 #logo{
     width: 150px;
-}
-main {
-    display : flex;
-    flex-wrap: wrap;
 }
 
 .product_container{
     
     width: 300px;
+    height : 400px;
+    transition: 100ms linear; 
+}
+
+.product_container:hover{
+    transform: scale(1.01);
+  
 }
 
 .product_img{
@@ -29,3 +37,10 @@ main {
     font-size: 20px;
 }
 
+#footer-article{
+    height : 200px;
+}
+
+.noHover{
+    pointer-events: none;
+}

@@ -15,30 +15,42 @@
 </head>
 <body>
     <header>
-
-        <div class="nav-back-color">
+  
+        <div class="nav-back-color border-bottom">
             <div class="container">
                <div class="row">
                   <nav class="col navbar navbar-expand-md navbar-light">
-                      <a href="index.html">
-                    <img id="logo" src="./images/logo.png" alt="Site logo">
-                        </a>
+                    <a href="index.html">
+                      <img id="logo" src="./images/logo.png" alt="Site logo">
+                    </a>
                     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarContent">
                         <span class="navbar-toggler-icon"></span>
                      </button>
-
+                     <div id="navbarContent" class="collapse navbar-collapse">
+                    <ul class="navbar-nav ml-auto">
+                       <li class="nav-item active">
+                          <a class="nav-link" href="index.html"> Retourner à l'Accueil</a>
+                       </li>
+                    </ul>
+                </div>
                   </nav>
                </div>
             </div>
          </div>
-
-
+         
+        
+        <div class="container mt-3">
+            <div class="jumbotron text-center">
+                <h1 class="font-weight-bold">FELICITATIONS !</h1>
+             
+            </div>
            </header>
 
-           <main id="container">
-               <h1 >MERCI DE VOTRE COMMANDE</h1>
-               <h2 id="total_confirmation"></h2>
-               <h3 id="orderId_confirmation"></h3>
+           <main class="container text-center">
+               <div class="confirmation">
+               <h1 id="total_confirmation"></h2>
+               <h2 id="orderId_confirmation"></h3>
+            </div>  
            </main>
 
 

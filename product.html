@@ -13,10 +13,10 @@
     <link rel="stylesheet" href="style.css">
 
 </head>
-<body>
+<body class="bg-white">
   <header>
   
-    <div class="nav-back-color">
+    <div class="nav-back-color border-bottom">
         <div class="container">
            <div class="row">
               <nav class="col navbar navbar-expand-md navbar-light">
@@ -33,7 +33,7 @@
                    </li>
                    <li class="nav-item">
                       <a class="nav-link" href="panier.html">
-                         <ion-icon name="basket-outline"></ion-icon>Panier<span>0</span>
+                         <ion-icon name="basket-outline"></ion-icon>Panier : <span>0</span>
                       </a>
                    </li>
                 </ul>
@@ -44,32 +44,36 @@
      </div>
      
     
-    <div class="container">
+    <div class="container mt-3">
         <div class="jumbotron text-center">
-            <h1 class="font-weight-bold">Orinoco, le site e-commerce nouvelle génération</h1>
+            <h1 class="font-weight-bold">Détail du produit séléctionné</h1>
          
         </div>
        </header>
 
- <main id="container">
-
-
-
-
-<!-- MENU BOOTSTRAP CHOIX OBJECTIFS -->
+ <main class="container d-flex  justify-content-center">
 
 
 </main>
 
-<div class="dropdown">
-  <button class="btn btn-primary dropdown-toggle" type="button" id="deroulantb" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Choix Taille Objectif</button>
-  <div class="dropdown-menu" aria-labelledby="deroulantb" id="menu">
+<!-- MENU BOOTSTRAP CHOIX OBJECTIFS -->
+
+<div id="footer-article" class="dropdown d-flex  justify-content-center">
+   <div class="m-1">
+  <button class="btn btn-primary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Choix Taille Objectif</button>
+  <div class="dropdown-menu" aria-labelledby="dropdownMenuButton" id="menu">
     <!-- .........CHOICES FILLED BY JAVASCRIPT USING THE API............... -->
   </div>
 </div>
 
+<div class="m-1">
+<a href="" class="btn btn-secondary" id="add-cart">"Ajouter au Panier"</a>
+</div>
+</div>
 
-<a href="#" class="btn btn-secondary" id="add-cart">"Ajouter au Panier"</a>
+
+
+
 
 
 <script type="text/javascript" src="main.js"></script>

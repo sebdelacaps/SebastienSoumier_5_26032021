@@ -15,7 +15,7 @@ document.addEventListener("DOMContentLoaded", async () => {
     data = await getProducts();
 
     // target the main container element
-    let main_container = document.getElementById("container");
+    let main_container = document.querySelector("main.container");
 
     for (let i = 0; i < data.length; i++) {
       // creation elements
@@ -27,10 +27,10 @@ document.addEventListener("DOMContentLoaded", async () => {
       let article_description = AddElement("p", article);
 
       // Add class, href and textContent
-      article_link.className = "product_link";
+      article_link.className = "product_link text-decoration-none m-3";
       article_link.href = "product.html?id=" + data[i]._id;
-      article.className = "product_container";
-      article_img.className = "product_img";
+      article.className = "product_container  border text-center bg-light rounded";
+      article_img.className = "product_img rounded-top";
       article_img.src = data[i].imageUrl;
       article_title.className = "product_title";
       article_title.textContent = data[i].name;

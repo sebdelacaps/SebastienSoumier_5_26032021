@@ -13,33 +13,36 @@ const getOrderId = () => {
     cartItems = JSON.parse(cartItems);
     
     for (var cartItem in cartItems) {
-      price_array.push(cartItems[cartItem].price)
+      price_array.push(cartItems[cartItem].price*cartItems[cartItem].inCart)
     }
    
-    var sum = price_array.reduce(function(a, b){
-        
-  console.log(sum)
-        return a + b;
-    }, 0);
+    // Reduce method to sum elements in an array
+  let totalOrder 
+  totalOrder = price_array.reduce((a, b) => a + b, 0)
 
+return totalOrder
+  
   }
 
-  // when the page is displayed, the promise from the fetch() method is received in the "data" array
-//and the Cart numbers is loaded from the LocalStorage (onLoadCartNumbers() function)
+  // when the page is displayed, catch OrderId with getOrderId function, and total calculation with cartItems_To_Array function
+//LocalStorage is cleared at the end
 
 document.addEventListener("DOMContentLoaded",  () => {
 
     const orderId_result = getOrderId();
-
-
-    const total_confirmation = document.querySelector("#total_confirmation");
     
-    const orderId_confirmation = document.querySelector("#orderId_confirmation");
+    const totalOrder_result = cartItems_To_Array();
+
+
+    let total_confirmation = document.querySelector("#total_confirmation");
+    
+   let orderId_confirmation = document.querySelector("#orderId_confirmation");
     
     orderId_confirmation.innerHTML= "L'identifiant de votre commande est : "+orderId_result;
 
-    console.log(cartItems_To_Array())
-    // localStorage.clear();
+    total_confirmation.innerHTML = "Merci de votre commande, d'un montant de "+totalOrder_result+"€";
+   
+     localStorage.clear();
     
 })
  
