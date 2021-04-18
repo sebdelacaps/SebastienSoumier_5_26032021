@@ -1,140 +1,151 @@
 <!DOCTYPE html>
 <html lang="fr">
+
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 
-    <title>Orinoco</title>
-    <meta name="description" content="Orinoco, le site e-commerce nouvel génération" />
+  <title>Orinoco</title>
+  <meta name="description" content="Orinoco, le site e-commerce nouvel génération" />
 
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
-    <link rel="stylesheet" href="../css/style.css">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+    integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+  <link rel="stylesheet" href="../css/style.css">
 
 </head>
+
 <body>
   <header>
-  
+
     <div class="nav-back-color border-bottom">
-        <div class="container">
-           <div class="row">
-              <nav class="col navbar navbar-expand-md navbar-light">
-                <a href="index.html">
-                  <img id="logo" src="../images/logo.png" alt="Site logo">
-                </a>
-                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarContent">
-                    <span class="navbar-toggler-icon"></span>
-                 </button>
-                 <div id="navbarContent" class="collapse navbar-collapse">
-                <ul class="navbar-nav ml-auto">
-                   <li class="nav-item active">
-                      <a class="nav-link" href="index.html"> Retourner à l'Accueil</a>
-                   </li>
-                </ul>
+      <div class="container">
+        <div class="row">
+          <nav class="col navbar navbar-expand-md navbar-light">
+            <a href="index.html">
+              <img id="logo" src="../images/logo.png" alt="Site logo">
+            </a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarContent">
+              <span class="navbar-toggler-icon"></span>
+            </button>
+            <div id="navbarContent" class="collapse navbar-collapse">
+              <ul class="navbar-nav ml-auto">
+                <li class="nav-item active">
+                  <a class="nav-link" href="index.html"> Retourner à l'Accueil</a>
+                </li>
+              </ul>
             </div>
-              </nav>
-           </div>
+          </nav>
         </div>
-     </div>
-     
-    
+      </div>
+    </div>
+
+
     <div class="container mt-3">
-        <div class="jumbotron text-center">
-            <h1 class="font-weight-bold">Détail de votre panier</h1>
-          </div>
-        </div>
-       </header>
- <main class="container">
+      <div class="jumbotron text-center">
+        <h1 class="font-weight-bold">Détail de votre panier</h1>
+      </div>
+    </div>
+  </header>
+  <main class="container">
 
-<table class="table table-striped table-bordered table-hover" id="tbl">
-    <caption></caption>
-    <thead class="thead-light">
+    <table class="table table-striped table-bordered table-hover" id="tbl">
+      <caption></caption>
+      <thead class="thead-light">
         <tr class="product-header">
-            <th class="product-title">Produit</th>
-            <th class="price">Prix</th>
-            <th class="quantity">Quantité</th>
-            <th class="total">Total</th>
+          <th class="product-title">Produit</th>
+          <th class="price">Prix</th>
+          <th class="quantity">Quantité</th>
+          <th class="total">Total</th>
         </tr>
-    </thead>
-    <tbody class="products-container">
-</tbody>
-<tfoot>
-    <tr>
-      <th colspan="3">Total Panier:</th>
-      <td id="total"></td>
-    </tr>
-   </tfoot>
-</table>
-</main>
+      </thead>
+      <tbody class="products-container">
+      </tbody>
+      <tfoot>
+        <tr>
+          <th colspan="3">Total Panier:</th>
+          <td id="total"></td>
+        </tr>
+      </tfoot>
+    </table>
+  </main>
 
-<section class="container">
+  <section class="container">
 
-  <!-- <form action="" class="row g-3 form needs-validation" id="myform" method="POST" novalidate> -->
+    <!-- <form action="" class="row g-3 form needs-validation" id="myform" method="POST" novalidate> -->
     <h1>Passez votre commande :</h1>
-    <form  class="row g-3 form" id="myform" method="POST" novalidate>
-        <div class="col-md-4 form-group">
-          <label for="firstName" class="form-label">Prénom</label>
-          <input type="text" class="form-control" id="firstName" name="firstName" placeholder="John" required>
-          <small></small>
-          
-        </div>
-        <div class="col-md-4 form-group">
-          <label for="lastName" class="form-label">Nom</label>
-          <input type="text" class="form-control" id="lastName" name="lastName" placeholder="Doe" required>
-          <small></small>
-        </div>
-        
-        <div class="col-md-4 form-group">
-            <label for="email" class="form-label">Adresse E-Mail</label>
-            <input type="text" class="form-control" id="email" name="email" placeholder="john.doe@gmail.com" required>
-            <small></small>
-          </div>
+    <form class="row g-3 form" id="myform" method="POST" novalidate>
+      <div class="col-md-4 form-group">
+        <label for="firstName" class="form-label">Prénom</label>
+        <input type="text" class="form-control" id="firstName" name="firstName" placeholder="John" required>
+        <small></small>
 
-        <div class="col-md-6 form-group">
-          <label for="address" class="form-label">Adresse</label>
-          <input type="text" class="form-control" id="address" name="address" placeholder="8 Rue de la Folie Méricourt" required>
-          <small></small>
+      </div>
+      <div class="col-md-4 form-group">
+        <label for="lastName" class="form-label">Nom</label>
+        <input type="text" class="form-control" id="lastName" name="lastName" placeholder="Doe" required>
+        <small></small>
+      </div>
+
+      <div class="col-md-4 form-group">
+        <label for="email" class="form-label">Adresse E-Mail</label>
+        <input type="text" class="form-control" id="email" name="email" placeholder="john.doe@gmail.com" required>
+        <small></small>
+      </div>
+
+      <div class="col-md-6 form-group">
+        <label for="address" class="form-label">Adresse</label>
+        <input type="text" class="form-control" id="address" name="address" placeholder="8 Rue de la Folie Méricourt"
+          required>
+        <small></small>
+      </div>
+
+      <div class="col-md-6 form-group">
+        <label for="cp" class="form-label">Code Postal</label>
+        <input type="text" class="form-control" id="cp" name="cp" placeholder="75011" required>
+        <small></small>
+      </div>
+
+      <div class="col-md-6 form-group">
+        <label for="city" class="form-label">Ville</label>
+        <input type="text" class="form-control" id="city" name="city" placeholder="PARIS" required>
+        <small></small>
+      </div>
+
+      <div class="col-12 form-group">
+        <div class="form-check">
+          <input class="form-check-input" type="checkbox" value="" id="conditions" name="conditions" required>
+          <label class="form-check-label" for="conditions">
+            Agree to terms and conditions
+          </label>
         </div>
-        
-        <div class="col-md-6 form-group">
-          <label for="cp" class="form-label">Code Postal</label>
-          <input type="text" class="form-control" id="cp" name="cp" placeholder="75011" required>
-          <small></small>
-        </div>
+      </div>
+      <div class="col-12 form group">
+        <button class="btn btn-primary" id="btnSubmit" type="submit">Commander</button>
+      </div>
 
-        <div class="col-md-6 form-group">
-          <label for="city" class="form-label">Ville</label>
-          <input type="text" class="form-control" id="city" name="city" placeholder="PARIS" required>
-          <small></small>
-        </div>
+    </form>
 
-        <div class="col-12 form-group">
-          <div class="form-check">
-            <input class="form-check-input" type="checkbox" value="" id="conditions" name="conditions" required>
-            <label class="form-check-label" for="conditions">
-              Agree to terms and conditions
-            </label>
-          </div>
-        </div>
-        <div class="col-12 form group">
-          <button class="btn btn-primary" id="btnSubmit" type="submit">Commander</button>
-        </div>
-  
-      </form>
-    
-</section>
+  </section>
 
-<script type="text/javascript" src="../js/main.js"></script>
-<script type="text/javascript" src="../js/panier.js"></script>
+  <script type="text/javascript" src="../js/main.js"></script>
+  <script type="text/javascript" src="../js/panier.js"></script>
 
 
-<script src="https://unpkg.com/ionicons@5.4.0/dist/ionicons.js"></script>
+  <script src="https://unpkg.com/ionicons@5.4.0/dist/ionicons.js"></script>
 
-<!-- jQuery first, then Popper.js, then Bootstrap JS -->
-<script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
-<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
-<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+  <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+  <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
+    integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"
+    crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+    integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+    crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
+    integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
+    crossorigin="anonymous"></script>
 
 </body>
+
 </html>

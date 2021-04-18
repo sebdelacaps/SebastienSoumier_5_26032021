@@ -21,7 +21,8 @@ document.addEventListener("DOMContentLoaded", async () => {
       // creation elements
       let article_link = AddElement("a", main_container);
       let article = AddElement("article", article_link);
-      let article_img = AddElement("img", article);
+      let article_img_cont = AddElement("div", article);
+      let article_img = AddElement("img", article_img_cont);
       let article_title = AddElement("h2", article);
       let article_price = AddElement("h3", article);
       let article_description = AddElement("p", article);
@@ -29,7 +30,9 @@ document.addEventListener("DOMContentLoaded", async () => {
       // Add class, href and textContent
       article_link.className = "product_link text-decoration-none m-3";
       article_link.href = "product.html?id=" + data[i]._id;
-      article.className = "product_container  border text-center bg-light rounded";
+      article.className =
+        "product_container  border text-center bg-light rounded";
+      article_img_cont.className = "product_img_cont";
       article_img.className = "product_img rounded-top";
       article_img.src = data[i].imageUrl;
       article_title.className = "product_title";

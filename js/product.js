@@ -18,7 +18,7 @@ const getProducts = async () => {
 // when the page is displayed, the promise from the fetch() method is received in the "data" array
 //and the Cart numbers is loaded from the LocalStorage (onLoadCartNumbers() function)
 
-document.addEventListener("DOMContentLoaded", async () => {
+document.addEventListener("DOMContentLoaded", load = async () => {
   onLoadCartNumbers();
   let data = [];
 
@@ -34,13 +34,16 @@ document.addEventListener("DOMContentLoaded", async () => {
 
     // creation elements
     let article = AddElement("article", main_container);
-    let article_img = AddElement("img", article);
+    let article_img_cont = AddElement("div", article);
+    let article_img = AddElement("img", article_img_cont);
     let article_title = AddElement("h2", article);
     let article_price = AddElement("h3", article);
     let article_description = AddElement("p", article);
 
     // Add class, href and textContent
-    article.className = "product_container  border text-center bg-light rounded noHover";
+    article.className =
+      "product_container  border text-center bg-light rounded noHover";
+    article_img_cont.className = "product_img_cont";
     article_img.className = "product_img rounded";
     article_img.src = data.imageUrl;
     article_title.className = "product_title";
